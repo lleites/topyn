@@ -84,9 +84,11 @@ def test_fix(tmpdir: py.path.local) -> None:
     mock_out.assert_called_once()
 
 
-def test_module_exec():
+def test_module_exec() -> None:
     import topyn.console
+
     with patch.object(topyn.console, "run") as mock_run:
         # noinspection PyUnresolvedReferences
         import topyn.__main__
+
         mock_run.assert_called_once()
