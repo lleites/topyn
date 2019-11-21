@@ -1,5 +1,8 @@
+import click
+
+
 def out(msg: str) -> None:
-    print(msg)  # noqa
+    click.echo(msg)
 
 
 def trying_to_fix() -> None:
