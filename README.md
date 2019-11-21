@@ -10,7 +10,7 @@ Over the time we have found a set of rules that makes working with Python in thi
 The problem is that this rules depend on a set of packages and config files, and every time we change our mind about one rule we need to update multiple projects.
 Topyn solves this by providing in one single place all the tools and configurations we use in our projects.
 
-All the configurations are part of the project (`topyn/configs`) and is not the porpoise of this project to make them flexible, if you need that please check the packages that we use, and run them with your configuration.
+All the configurations are part of the project (`topyn/configs`) and is not the purpose of this project to make them flexible, if you need that please check the packages that we use, and run them with your configuration.
 
 ## Command line
 There are two possible arguments:
@@ -39,6 +39,7 @@ optional arguments:
 ```
 
 ### `topyn` output
+OK
 ```
 ➡️Checking formatting ...
 All done! ✨ 🍰 ✨
@@ -46,6 +47,18 @@ All done! ✨ 🍰 ✨
 ➡️Checking rules ...
 ➡️Checking types ...
 ✅ Everything OK 😎
+```
+FAIL
+```
+➡️Checking formatting ...
+All done! ✨ 🍰 ✨
+1 file would be left unchanged.
+➡️Checking rules ...
+➡️Checking types ...
+tests/resources/wrong_types/wrong_types.py:2: error: Incompatible return value type (got "int", expected "str")
+Found 1 error in 1 file (checked 1 source file)
+
+🔴 Sadly, types failed 😢
 ```
 
 
