@@ -1,4 +1,4 @@
-name: Run Topyn
+name: Topyn
 
 on: [push, pull_request]
 

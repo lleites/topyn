@@ -1,8 +1,15 @@
 # TOPyN: Typed Opinionated PYthon Normalizer
+<p>
+    <a href="https://github.com/lleites/topyn/actions"><img alt="Actions Status" src="https://github.com/lleites/topyn/workflows/Test/badge.svg"></a>
+    <a href="https://github.com/lleites/topyn/actions"><img alt="Actions Status" src="https://github.com/lleites/topyn/workflows/Topyn/badge.svg"></a>
+    <a href="https://coveralls.io/github/lleites/topyn?branch=HEAD"><img alt="Coverage Status" src="https://coveralls.io/repos/github/lleites/topyn/badge.svg?branch=HEAD"></a>
+    <a href="https://github.com/lleites/topyn/blob/master/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
+    <a href="https://pypi.org/project/topyn/"><img alt="PyPI" src="https://img.shields.io/pypi/v/topyn"></a>
+</p>
 
 ## About
 <p align="center">
-    <img src="scooter.svg" alt="Scooter" width="300"/>*
+    <img src="https://github.com/lleites/topyn/blob/master/scooter.svg" alt="Scooter" width="300"/>*
 </p>
 Python is quite a flexible language, something that is not so good if you start working in mid level size projects and/or in teams.
 Over the time we have found a set of rules that makes working with Python in this context easier, and once you get you use to them you want to apply them to every small Python snippet that you write.
