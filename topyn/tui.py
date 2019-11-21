@@ -10,7 +10,7 @@ def trying_to_fix() -> None:
 
 
 def running(pretty_name: str) -> None:
-    out(f"➡️Checking {pretty_name} ...")
+    out(f"➡️ Checking {pretty_name} ...")
 
 
 def failed(pretty_name: str) -> None:
