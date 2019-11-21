@@ -6,6 +6,7 @@
 <a href="https://github.com/lleites/topyn/blob/master/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
 <a href="https://pypi.org/project/topyn/"><img alt="PyPI" src="https://img.shields.io/pypi/v/topyn"></a>
 </p>
+
 ## About
 <p align="center">
     <img src="https://github.com/lleites/topyn/blob/master/scooter.svg" alt="Scooter" width="300"/>*
