@@ -4,10 +4,10 @@
 
 <img src="scooter.svg" alt="Scooter" width="300"/>
 
-Python is quite a flexible language, something that is not soo good if you start working on mid level size projects and/or in teams.
-Over the time we have found a set of rules that makes working with Python in this context easier, and once you get you use to them you want to apply it to every small Python snippet that you do.
+Python is quite a flexible language, something that is not so good if you start working on mid level size projects and/or in teams.
+Over the time we have found a set of rules that makes working with Python in this context easier, and once you get you use to them you want to apply them to every small Python snippet that you do.
 
-The problem is that this rules depend on a set of packages and config files, and every time we change our mind about one rule we need to update multiple projects.
+The problem is that these rules depend on a set of packages and config files, and every time we change our mind about one rule, or add new ones, we need to update multiple projects.
 Topyn solves this by providing in one single place all the tools and configurations we use in our projects.
 
 All the configurations are part of the project (`topyn/configs`) and is not the purpose of this project to make them flexible, if you need that please check the packages that we use, and run them with your configuration.
@@ -39,7 +39,7 @@ optional arguments:
 ```
 
 ### `topyn` output
-OK
+✅
 ```
 ➡️Checking formatting ...
 All done! ✨ 🍰 ✨
@@ -48,7 +48,7 @@ All done! ✨ 🍰 ✨
 ➡️Checking types ...
 ✅ Everything OK 😎
 ```
-FAIL
+🔴 
 ```
 ➡️Checking formatting ...
 All done! ✨ 🍰 ✨
@@ -69,9 +69,9 @@ flake8 is a command-line utility for enforcing style consistency across Python p
 
 #### Flake8 plugins
 * #### [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear)
-  A plugin for Flake8 finding likely bugs and design problems in your program. Contains warnings that don't belong in pyflakes and pycodestyle. 
+  A plugin for flake8 finding likely bugs and design problems in your program. Contains warnings that don't belong in pyflakes and pycodestyle. 
 * #### [flake8-print](https://github.com/JBKahn/flake8-print)
-  Check for Print statements in python files.
+  Check for `print` statements in python files.
 * #### [flake8-comprehensions](https://github.com/adamchainz/flake8-comprehensions)
   A flake8 plugin that helps you write better list/set/dict comprehensions.
 ### [Black](https://github.com/psf/black)
