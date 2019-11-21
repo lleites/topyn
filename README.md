@@ -4,8 +4,8 @@
 <p align="center">
     <img src="scooter.svg" alt="Scooter" width="300"/>*
 </p>
-Python is quite a flexible language, something that is not so good if you start working on mid level size projects and/or in teams.
-Over the time we have found a set of rules that makes working with Python in this context easier, and once you get you use to them you want to apply them to every small Python snippet that you do.
+Python is quite a flexible language, something that is not so good if you start working in mid level size projects and/or in teams.
+Over the time we have found a set of rules that makes working with Python in this context easier, and once you get you use to them you want to apply them to every small Python snippet that you write.
 
 The problem is that these rules depend on a set of packages and config files, and every time we change our mind about one rule, or add new ones, we need to update multiple projects.
 Topyn solves this by providing in one single place all the tools and configurations we use in our projects.
