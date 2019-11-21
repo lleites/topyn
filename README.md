@@ -12,6 +12,9 @@ Topyn solves this by providing in one single place all the tools and configurati
 
 All the configurations are part of the project (`topyn/configs`) and is not the purpose of this project to make them flexible, if you need that please check the packages that we use, and run them with your configuration.
 
+## Install
+`pip install topyn`
+
 ## Command line
 There are two possible arguments:
 * `path` is the path that you want to check, if it is empty it defaults to the current directory.
@@ -79,4 +82,10 @@ The Uncompromising Code Formatter
 ### [Mypy](https://github.com/python/mypy)
 Optional static typing for Python (PEP 484) 
 
+## Contributors
+Leandro Leites Barrios : Main developer
+
+Denada Korita : UX & Documentation consultant 
+
+---
 \* scooter icon source: [icons8](icons8.com)
