@@ -1,9 +1,9 @@
 # TOPyN: Typed Opinionated PYthon Normalizer
 
 ## About
-
-<img src="scooter.svg" alt="Scooter" width="300"/>
-
+<p align="center">
+    <img src="scooter.svg" alt="Scooter" width="300"/>
+</p>
 Python is quite a flexible language, something that is not so good if you start working on mid level size projects and/or in teams.
 Over the time we have found a set of rules that makes working with Python in this context easier, and once you get you use to them you want to apply them to every small Python snippet that you do.
 
