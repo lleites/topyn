@@ -8,7 +8,7 @@ from topyn.console import run
 
 
 def test_version() -> None:
-    assert __version__ == "0.1.0"
+    assert __version__ == "0.2.0"
 
 
 def _run_system_exit(path: str, expected_code: int = 1) -> None:
@@ -82,3 +82,11 @@ def test_fix(tmpdir: py.path.local) -> None:
     with patch.object(topyn.tui, "everything_is_ok") as mock_out:
         run([str(tmpdir)])
     mock_out.assert_called_once()
+
+
+def test_module_exec():
+    import topyn.console
+    with patch.object(topyn.console, "run") as mock_run:
+        # noinspection PyUnresolvedReferences
+        import topyn.__main__
+        mock_run.assert_called_once()

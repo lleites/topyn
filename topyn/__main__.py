@@ -1,3 +1,3 @@
-from topyn.console import run
+import topyn.console as console
 
-run()
+console.run()
