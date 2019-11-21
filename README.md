@@ -1,5 +1,9 @@
 # TOPyN: Typed Opinionated PYthon Normalizer
-
+[![Actions Status](https://github.com/lleites/topyn/workflows/Test/badge.svg)](https://github.com/lleites/topyn/actions)
+[![Actions Status](https://github.com/lleites/topyn/workflows/Topyn/badge.svg)](https://github.com/lleites/topyn/actions)
+[![Coverage Status](https://coveralls.io/repos/github/lleites/topyn/badge.svg?branch=HEAD)](https://coveralls.io/github/lleites/topyn?branch=HEAD)
+<a href="https://github.com/psf/black/blob/master/LICENSE"><img alt="License: MIT" src="https://black.readthedocs.io/en/stable/_static/license.svg"></a>
+<a href="https://pypi.org/project/topyn/"><img alt="PyPI" src="https://img.shields.io/pypi/v/topyn"></a>
 ## About
 <p align="center">
     <img src="scooter.svg" alt="Scooter" width="300"/>*
