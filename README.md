@@ -95,4 +95,4 @@ Leandro Leites Barrios : Main developer
 Denada Korita : UX & Documentation consultant 
 
 ---
-\* scooter icon source: [icons8](icons8.com)
+\* scooter icon source: [icons8](https://icons8.com/)
