@@ -18,4 +18,4 @@ def failed(pretty_name: str) -> None:
 
 
 def everything_is_ok() -> None:
-    out("✅ Everything OK 😎")
+    out("✅ Everything is OK! 😎")

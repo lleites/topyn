@@ -46,7 +46,7 @@ All done! ✨ 🍰 ✨
 8 files would be left unchanged.
 ➡️Checking rules ...
 ➡️Checking types ...
-✅ Everything OK 😎
+✅ Everything is OK! 😎"
 ```
 🔴 
 ```

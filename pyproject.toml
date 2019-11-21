@@ -1,8 +1,19 @@
 [tool.poetry]
 name = "topyn"
 version = "0.1.0"
-description = ""
-authors = ["leandro.leites <leandro.leites@flixbus.com>"]
+description = "TOPyN: Typed Opinionated PYthon Normalizer"
+authors = ["Leandro Leites Barrios <laloleites@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/lleites/topyn"
+repository = "https://github.com/lleites/topyn"
+keywords = [
+"formatter",
+"linter",
+"style-guide",
+"typing",
+"opinionated"
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"
