@@ -29,7 +29,6 @@ jobs:
         run: |
           python -m poetry run pytest --cov topyn -rf tests
       - name: Topyn
-        shell: bash
         run: |
           python -m pip install .
           topyn topyn
