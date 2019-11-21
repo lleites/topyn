@@ -1,10 +1,10 @@
 # TOPyN: Typed Opinionated PYthon Normalizer
-<p align="center">
-<a href="https://github.com/lleites/topyn/actions"><img alt="Actions Status" src="https://github.com/lleites/topyn/workflows/Test/badge.svg">
-<a href="https://github.com/lleites/topyn/actions"><img alt="Actions Status" src="https://github.com/lleites/topyn/workflows/Topyn/badge.svg">
-<a href="https://coveralls.io/github/lleites/topyn?branch=HEAD"><img alt="Coverage Status" src="https://coveralls.io/repos/github/lleites/topyn/badge.svg?branch=HEAD">
-<a href="https://github.com/lleites/topyn/blob/master/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
-<a href="https://pypi.org/project/topyn/"><img alt="PyPI" src="https://img.shields.io/pypi/v/topyn"></a>
+<p>
+    <a href="https://github.com/lleites/topyn/actions"><img alt="Actions Status" src="https://github.com/lleites/topyn/workflows/Test/badge.svg"></a>
+    <a href="https://github.com/lleites/topyn/actions"><img alt="Actions Status" src="https://github.com/lleites/topyn/workflows/Topyn/badge.svg"></a>
+    <a href="https://coveralls.io/github/lleites/topyn?branch=HEAD"><img alt="Coverage Status" src="https://coveralls.io/repos/github/lleites/topyn/badge.svg?branch=HEAD"></a>
+    <a href="https://github.com/lleites/topyn/blob/master/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
+    <a href="https://pypi.org/project/topyn/"><img alt="PyPI" src="https://img.shields.io/pypi/v/topyn"></a>
 </p>
 
 ## About
