@@ -1,7 +1,7 @@
 [flake8]
 max-line-length = 80
 #Ignored because of black
-ignore = ["E203", "W503"]
+ignore = E203, W503
 
 exclude = '''
           (
