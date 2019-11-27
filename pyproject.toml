@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "topyn"
-version = "0.2.3"
+version = "0.3.0"
 description = "TOPyN: Typed Opinionated PYthon Normalizer"
 authors = ["Leandro Leites Barrios <laloleites@gmail.com>"]
 license = "MIT"
@@ -24,6 +24,7 @@ flake8-comprehensions = "^3.1"
 black = "19.10b0"
 mypy = "^0.740.0"
 click = "^7.0"
+pep8-naming = "^0.9.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"

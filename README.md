@@ -84,6 +84,8 @@ flake8 is a command-line utility for enforcing style consistency across Python p
   Check for `print` statements in python files.
 * #### [flake8-comprehensions](https://github.com/adamchainz/flake8-comprehensions)
   A flake8 plugin that helps you write better list/set/dict comprehensions.
+* #### [pep8-naming](https://github.com/PyCQA/pep8-naming)
+  Naming Convention checker for Python (PEP 8)
 ### [Black](https://github.com/psf/black)
 The Uncompromising Code Formatter
 ### [Mypy](https://github.com/python/mypy)

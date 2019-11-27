@@ -8,7 +8,7 @@ from topyn.console import run
 
 
 def test_version() -> None:
-    assert __version__ == "0.2.3"
+    assert __version__ == "0.3.0"
 
 
 def _run_system_exit(path: str, expected_code: int = 1) -> None:
@@ -40,6 +40,15 @@ def test_bad_options() -> None:
 
     with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
         _run_system_exit("tests/resources/bad_options")
+
+        mock_out.assert_called_with("rules")
+
+
+def test_incorrect_naming() -> None:
+    import topyn.tui
+
+    with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
+        _run_system_exit("tests/resources/incorrect_naming")
 
         mock_out.assert_called_with("rules")
 
