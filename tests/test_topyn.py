@@ -2,6 +2,7 @@ from unittest.mock import patch
 
 import py
 import pytest
+from _pytest.capture import CaptureFixture
 
 from topyn import __version__
 from topyn.console import run
@@ -17,52 +18,90 @@ def _run_system_exit(path: str, expected_code: int = 1) -> None:
         assert e.code == expected_code
 
 
-def test_wrong_types() -> None:
+def test_wrong_types(capsys: CaptureFixture) -> None:
     import topyn.tui
 
     with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
         _run_system_exit("tests/resources/wrong_types")
 
         mock_out.assert_called_with("types")
+        captured = capsys.readouterr()
+        assert "Incompatible return value type" in captured.out
 
 
-def test_missing_types() -> None:
+def test_missing_types(capsys: CaptureFixture) -> None:
     import topyn.tui
 
     with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
         _run_system_exit("tests/resources/missing_types")
 
         mock_out.assert_called_with("types")
+        captured = capsys.readouterr()
+        assert "missing a return type annotation" in captured.out
 
 
-def test_bad_options() -> None:
+def test_bad_rules(capsys: CaptureFixture) -> None:
     import topyn.tui
 
     with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
-        _run_system_exit("tests/resources/bad_options")
+        _run_system_exit("tests/resources/bad_rules")
 
         mock_out.assert_called_with("rules")
+        captured = capsys.readouterr()
+        assert "T001 print found" in captured.out
 
 
-def test_incorrect_naming() -> None:
+def test_incorrect_naming(capsys: CaptureFixture) -> None:
     import topyn.tui
 
     with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
         _run_system_exit("tests/resources/incorrect_naming")
 
         mock_out.assert_called_with("rules")
+        captured = capsys.readouterr()
+        assert (
+            "N802 function name 'iLikeCamelCase' should be lowercase"
+            in captured.out
+        )
 
 
-def test_wrong_formatting() -> None:
+def test_bugbear(capsys: CaptureFixture) -> None:
+    import topyn.tui
+
+    with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
+        _run_system_exit("tests/resources/mutable_default_parameter")
+
+        mock_out.assert_called_with("rules")
+        captured = capsys.readouterr()
+        assert (
+            "B006 Do not use mutable data structures for argument defaults"
+            in captured.out
+        )
+
+
+def test_comprehensions(capsys: CaptureFixture) -> None:
+    import topyn.tui
+
+    with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
+        _run_system_exit("tests/resources/unnecesary_list_call")
+
+        mock_out.assert_called_with("rules")
+        captured = capsys.readouterr()
+        assert "C413 Unnecessary list call around sorted()." in captured.out
+
+
+def test_wrong_formatting(capsys: CaptureFixture) -> None:
     import topyn.tui
 
     with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
         _run_system_exit("tests/resources/wrong_formatting")
 
         mock_out.assert_called_with("formatting")
+        captured = capsys.readouterr()
+        assert "would reformat" in captured.err
 
 
-def test_ok() -> None:
+def test_ok(capsys: CaptureFixture) -> None:
     import topyn.tui
 
     with patch.object(
@@ -70,6 +109,10 @@ def test_ok() -> None:
     ) as mock_out:
         run(["tests/resources/ok"])
         mock_out.assert_called_once()
+        assert (
+            "All done! ✨ 🍰 ✨\n1 file would be left unchanged.\n"
+            == capsys.readouterr().err
+        )
 
 
 def test_fix(tmpdir: py.path.local) -> None:
