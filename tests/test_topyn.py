@@ -65,6 +65,31 @@ def test_incorrect_naming(capsys: CaptureFixture) -> None:
         )
 
 
+def test_bugbear(capsys: CaptureFixture) -> None:
+    import topyn.tui
+
+    with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
+        _run_system_exit("tests/resources/mutable_default_parameter")
+
+        mock_out.assert_called_with("rules")
+        captured = capsys.readouterr()
+        assert (
+            "B006 Do not use mutable data structures for argument defaults"
+            in captured.out
+        )
+
+
+def test_comprehensions(capsys: CaptureFixture) -> None:
+    import topyn.tui
+
+    with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
+        _run_system_exit("tests/resources/unnecesary_list_call")
+
+        mock_out.assert_called_with("rules")
+        captured = capsys.readouterr()
+        assert "C413 Unnecessary list call around sorted()." in captured.out
+
+
 def test_wrong_formatting(capsys: CaptureFixture) -> None:
     import topyn.tui
 
