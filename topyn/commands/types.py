@@ -1,18 +1,21 @@
-from pathlib import Path
 from typing import List
 
 import topyn.tui as tui
-from topyn.commands import run_command
+from topyn.commands import run_command, get_config
 from mypy.api import run
 
 
-def _config_args(config_path: Path, fix: bool) -> List[str]:
-    return ["--config-file", f"{config_path}"]
+def _extra_args(module: str) -> List[str]:
+    config_path = get_config(module)
+    return ["--config-file", str(config_path.resolve())]
 
 
 def check(path: str) -> None:
+    module = "mypy"
+    pretty_name = "types"
+    extra_args = _extra_args(module)
     run_command(
-        path, "mypy", "types", _config_args, api_integration=api_integration
+        path, module, pretty_name, extra_args, api_integration=api_integration,
     )
 
 

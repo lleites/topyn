@@ -1,14 +1,14 @@
-from pathlib import Path
 from typing import List
 
-from topyn.commands import run_command
+from topyn.commands import run_command, get_config
 
 
-def extra_args_function(config_path: Path, fix: bool) -> List[str]:
+def _extra_args(fix: bool, module: str) -> List[str]:
 
+    config_path = get_config(module)
     extra_args = [
         "--config",
-        f"{config_path}",
+        str(config_path.resolve()),
     ]
     if not fix:
         extra_args.append("--check")
@@ -17,4 +17,7 @@ def extra_args_function(config_path: Path, fix: bool) -> List[str]:
 
 
 def normalize(path: str, fix: bool) -> None:
-    run_command(path, "black", "formatting", extra_args_function, fix=fix)
+    module = "black"
+    pretty_name = "formatting"
+    extra_args = _extra_args(fix, module)
+    run_command(path, module, pretty_name, extra_args)
