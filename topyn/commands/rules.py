@@ -1,6 +1,6 @@
 from typing import List
 
-from topyn.commands import run_command, get_config
+from topyn.commands import get_config, run_command
 
 
 def _extra_args(module: str) -> List[str]:

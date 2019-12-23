@@ -1,7 +1,7 @@
 import sys
-from runpy import run_module
-from typing import List, Callable
 from pathlib import Path
+from runpy import run_module
+from typing import Callable, List
 
 import topyn.tui as tui
 

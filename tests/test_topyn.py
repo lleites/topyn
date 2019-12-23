@@ -101,6 +101,17 @@ def test_wrong_formatting(capsys: CaptureFixture) -> None:
         assert "would reformat" in captured.err
 
 
+def test_sort_imports(capsys: CaptureFixture) -> None:
+    import topyn.tui
+
+    with patch.object(topyn.tui, "failed", wraps=topyn.tui.failed) as mock_out:
+        _run_system_exit("tests/resources/unsorted_imports")
+
+        mock_out.assert_called_with("sorting imports")
+        captured = capsys.readouterr()
+        assert "Imports are incorrectly sorted" in captured.out
+
+
 def test_ok(capsys: CaptureFixture) -> None:
     import topyn.tui
 

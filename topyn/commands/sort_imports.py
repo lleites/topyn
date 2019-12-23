@@ -6,18 +6,15 @@ from topyn.commands import get_config, run_command
 def _extra_args(fix: bool, module: str) -> List[str]:
 
     config_path = get_config(module)
-    extra_args = [
-        "--config",
-        str(config_path.resolve()),
-    ]
+    extra_args = ["--settings-path", str(config_path.parent.resolve()), "-rc"]
     if not fix:
-        extra_args.append("--check")
+        extra_args.append("--check-only")
 
     return extra_args
 
 
-def normalize(path: str, fix: bool) -> None:
-    module = "black"
-    pretty_name = "formatting"
+def sort(path: str, fix: bool) -> None:
+    module = "isort"
+    pretty_name = "sorting imports"
     extra_args = _extra_args(fix, module)
     run_command(path, module, pretty_name, extra_args)

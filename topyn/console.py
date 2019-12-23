@@ -1,11 +1,11 @@
 import argparse
 from typing import List, Optional
 
-import topyn.commands.rules as rules
-import topyn.commands.format as format_
-import topyn.commands.types as types
-
 import topyn
+import topyn.commands.format as format_
+import topyn.commands.rules as rules
+import topyn.commands.sort_imports as sort_imports
+import topyn.commands.types as types
 import topyn.tui as tui
 
 
@@ -31,6 +31,7 @@ def run(args: Optional[List[str]] = None) -> None:
     if parsed_args.fix:
         tui.trying_to_fix()
 
+    sort_imports.sort(path, fix)
     format_.normalize(path, fix)
     rules.lint(path)
     types.check(path)

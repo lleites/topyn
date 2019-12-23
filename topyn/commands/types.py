@@ -1,8 +1,9 @@
 from typing import List
 
-import topyn.tui as tui
-from topyn.commands import run_command, get_config
 from mypy.api import run
+
+import topyn.tui as tui
+from topyn.commands import get_config, run_command
 
 
 def _extra_args(module: str) -> List[str]:
