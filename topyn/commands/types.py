@@ -6,12 +6,14 @@ from topyn.commands import run_command
 from mypy.api import run
 
 
-def _config_args(config_path: Path) -> List[str]:
+def _config_args(config_path: Path, fix: bool) -> List[str]:
     return ["--config-file", f"{config_path}"]
 
 
 def check(path: str) -> None:
-    run_command(path, "mypy", "types", _config_args, api_integration)
+    run_command(
+        path, "mypy", "types", _config_args, api_integration=api_integration
+    )
 
 
 def api_integration(args: List[str]) -> int:

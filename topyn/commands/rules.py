@@ -4,7 +4,7 @@ from typing import List
 from topyn.commands import run_command
 
 
-def _config_args(config_path: Path) -> List[str]:
+def _config_args(config_path: Path, fix: bool) -> List[str]:
     return [f"--config={config_path}"]
 
 

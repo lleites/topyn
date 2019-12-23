@@ -10,15 +10,19 @@ def run_command(
     path: str,
     module: str,
     pretty_name: str,
-    extra_args: Callable[[Path], List[str]],
+    extra_args: Callable[[Path, bool], List[str]],
+    *,
+    fix: bool = False,
     api_integration: Callable[[List[str]], int] = None,
 ) -> None:
     tui.running(pretty_name)
     config_path = _get_config(__file__, module)
     if api_integration:
-        exit_code = api_integration([path, *extra_args(config_path)])
+        exit_code = api_integration([path, *extra_args(config_path, fix)])
     else:
-        exit_code = _call_module(module, ["", path, *extra_args(config_path)])
+        exit_code = _call_module(
+            module, ["", path, *extra_args(config_path, fix)]
+        )
 
     if exit_code != 0:
         tui.failed(pretty_name)
