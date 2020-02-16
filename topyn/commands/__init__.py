@@ -10,15 +10,15 @@ def run_command(
     path: str,
     module: str,
     pretty_name: str,
-    extra_args: Callable[[Path], List[str]],
+    extra_args: List[str],
+    *,
     api_integration: Callable[[List[str]], int] = None,
 ) -> None:
     tui.running(pretty_name)
-    config_path = _get_config(__file__, module)
     if api_integration:
-        exit_code = api_integration([path, *extra_args(config_path)])
+        exit_code = api_integration([path, *extra_args])
     else:
-        exit_code = _call_module(module, ["", path, *extra_args(config_path)])
+        exit_code = _call_module(module, ["", path, *extra_args])
 
     if exit_code != 0:
         tui.failed(pretty_name)
@@ -39,5 +39,5 @@ def _call_module(module_name: str, args: List[str]) -> int:
     return exit_code
 
 
-def _get_config(command_path: str, module_name: str) -> Path:
-    return Path(command_path).parent.parent / "configs" / f"{module_name}.toml"
+def get_config(module_name: str) -> Path:
+    return Path(__file__).parent.parent / "configs" / f"{module_name}.toml"

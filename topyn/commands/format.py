@@ -1,21 +1,23 @@
-from pathlib import Path
-from typing import List, Callable
+from typing import List
 
-from topyn.commands import run_command
+from topyn.commands import run_command, get_config
 
 
-def extra_args_function(fix: bool) -> Callable[[Path], List[str]]:
-    def _extra(config_path: Path) -> List[str]:
-        extra_args = [
-            "--config",
-            f"{config_path}",
-        ]
-        if not fix:
-            extra_args.append("--check")
-        return extra_args
+def _extra_args(fix: bool, module: str) -> List[str]:
 
-    return _extra
+    config_path = get_config(module)
+    extra_args = [
+        "--config",
+        str(config_path.resolve()),
+    ]
+    if not fix:
+        extra_args.append("--check")
+
+    return extra_args
 
 
 def normalize(path: str, fix: bool) -> None:
-    run_command(path, "black", "formatting", extra_args_function(fix))
+    module = "black"
+    pretty_name = "formatting"
+    extra_args = _extra_args(fix, module)
+    run_command(path, module, pretty_name, extra_args)

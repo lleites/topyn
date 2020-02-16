@@ -1,12 +1,15 @@
-from pathlib import Path
 from typing import List
 
-from topyn.commands import run_command
+from topyn.commands import run_command, get_config
 
 
-def _config_args(config_path: Path) -> List[str]:
-    return [f"--config={config_path}"]
+def _extra_args(module: str) -> List[str]:
+    config_path = get_config(module)
+    return [f"--config={config_path.resolve()}"]
 
 
 def lint(path: str) -> None:
-    run_command(path, "flake8", "rules", _config_args)
+    module = "flake8"
+    pretty_name = "rules"
+    extra_args = _extra_args(module)
+    run_command(path, module, pretty_name, extra_args)
