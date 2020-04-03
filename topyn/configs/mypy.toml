@@ -1,3 +1,6 @@
 [mypy]
 ignore_missing_imports = true
 disallow_untyped_defs = true
+
+[mypy-tests.*]
+disallow_untyped_defs = false
