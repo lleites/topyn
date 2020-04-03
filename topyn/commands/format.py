@@ -20,4 +20,4 @@ def normalize(path: str, fix: bool) -> None:
     module = "black"
     pretty_name = "formatting"
     extra_args = _extra_args(fix, module)
-    run_command(path, module, pretty_name, extra_args)
+    run_command(path, module, pretty_name, extra_args, fix)

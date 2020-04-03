@@ -28,8 +28,9 @@ def run(args: Optional[List[str]] = None) -> None:
     path = parsed_args.path
     fix = parsed_args.fix
 
-    if parsed_args.fix:
+    if fix:
         tui.trying_to_fix()
+        rules.clean(path)
 
     format_.normalize(path, fix)
     rules.lint(path)

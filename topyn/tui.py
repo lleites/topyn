@@ -9,8 +9,12 @@ def trying_to_fix() -> None:
     out("Trying to fix your code 🤞")
 
 
-def running(pretty_name: str) -> None:
+def checking(pretty_name: str) -> None:
     out(f"➡️ Checking {pretty_name} ...")
+
+
+def fixing(pretty_name: str) -> None:
+    out(f"➡️ Fixing {pretty_name} ...")
 
 
 def failed(pretty_name: str) -> None:

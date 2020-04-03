@@ -11,10 +11,15 @@ def run_command(
     module: str,
     pretty_name: str,
     extra_args: List[str],
+    fix: bool = False,
     *,
     api_integration: Callable[[List[str]], int] = None,
 ) -> None:
-    tui.running(pretty_name)
+    if fix:
+        tui.fixing(pretty_name)
+    else:
+        tui.checking(pretty_name)
+
     if api_integration:
         exit_code = api_integration([path, *extra_args])
     else:

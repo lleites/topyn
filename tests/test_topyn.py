@@ -136,6 +136,27 @@ def test_fix(tmpdir: py.path.local) -> None:
     mock_out.assert_called_once()
 
 
+def test_fix_rules(tmpdir: py.path.local) -> None:
+    import topyn.tui
+
+    tmp_file = tmpdir.join("file.py")
+    tmp_file.write("import os\n\nsome_code = 42\n")
+
+    with patch.object(topyn.tui, "failed") as mock_out:
+        _run_system_exit(str(tmpdir))
+        mock_out.assert_called_with("rules")
+
+    with patch.object(
+        topyn.tui, "trying_to_fix", wraps=topyn.tui.trying_to_fix
+    ) as mock_out:
+        run([str(tmpdir), "--fix"])
+        mock_out.assert_called_once()
+
+    with patch.object(topyn.tui, "everything_is_ok") as mock_out:
+        run([str(tmpdir)])
+    mock_out.assert_called_once()
+
+
 def test_module_exec() -> None:
     import topyn.console
 
