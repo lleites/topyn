@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "topyn"
-version = "0.4.0.dev"
+version = "0.4.0"
 description = "TOPyN: Typed Opinionated PYthon Normalizer"
 authors = ["Leandro Leites Barrios <laloleites@gmail.com>"]
 license = "MIT"
