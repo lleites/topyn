@@ -1,7 +1,9 @@
 import sys
 from runpy import run_module
-from typing import List, Callable
+from typing import List, Callable, Dict, Any
 from pathlib import Path
+
+import toml
 
 import topyn.tui as tui
 
@@ -46,3 +48,13 @@ def _call_module(module_name: str, args: List[str]) -> int:
 
 def get_config(module_name: str) -> Path:
     return Path(__file__).parent.parent / "configs" / f"{module_name}.toml"
+
+
+def _get_topyn_config() -> Dict[str, Any]:
+    return toml.load(Path(__file__).parent.parent / "configs" / "topyn.toml")[
+        "tool"
+    ]["topyn"]
+
+
+def get_topyn_excludes() -> List[str]:
+    return _get_topyn_config()["excludes"]

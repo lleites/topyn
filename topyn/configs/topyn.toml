@@ -1,0 +1,17 @@
+[tool.topyn]
+
+excludes = [".eggs",
+            ".git",
+            ".hg",
+            ".mypy_cache",
+            ".tox",
+            ".venv",
+            "venv",
+            "_build",
+            "buck-out",
+            "build",
+            "dist",
+            "node_modules",
+            ".serverless",
+            ".vscode",
+            "cdk.out",]
