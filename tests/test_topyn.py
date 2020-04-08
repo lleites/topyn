@@ -9,7 +9,7 @@ from topyn.console import run
 
 
 def test_version() -> None:
-    assert __version__ == "0.5.0"
+    assert __version__ == "0.6.0.dev"
 
 
 def _run_system_exit(path: str, expected_code: int = 1) -> None:
