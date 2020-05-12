@@ -17,16 +17,16 @@ keywords = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
-flake8 = "^3.7"
-flake8-bugbear = "^19.8"
-flake8-print = "^3.1"
-flake8-comprehensions = "^3.1"
+flake8 = "3.8.*"
+flake8-bugbear = "20.1.*"
+flake8-print = "3.1.*"
+flake8-comprehensions = "3.2.*"
 black = "19.10b0"
-mypy = "^0.740.0"
-click = "^7.0"
-pep8-naming = "^0.9.1"
-autoflake = "^1.3.1"
-toml ="^0.10.0"
+mypy = "0.770"
+click = "7.1.*"
+pep8-naming = "0.10.*"
+autoflake = "1.3.*"
+toml ="0.10.*"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
