@@ -38,7 +38,9 @@ def _call_module(module_name: str, args: List[str]) -> int:
 
     try:
         run_module(
-            module_name, run_name="__main__", alter_sys=True,
+            module_name,
+            run_name="__main__",
+            alter_sys=True,
         )
     except SystemExit as e:
         exit_code = e.code
