@@ -15,7 +15,11 @@ def check(path: str) -> None:
     pretty_name = "types"
     extra_args = _extra_args(module)
     run_command(
-        path, module, pretty_name, extra_args, api_integration=api_integration,
+        path,
+        module,
+        pretty_name,
+        extra_args,
+        api_integration=api_integration,
     )
 
 

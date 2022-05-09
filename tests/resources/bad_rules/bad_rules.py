@@ -1,1 +1,3 @@
-print("I like printing",)
+print(
+    "I like printing",
+)
