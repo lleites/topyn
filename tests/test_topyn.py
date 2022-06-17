@@ -8,7 +8,7 @@ from topyn.console import run
 
 
 def test_version() -> None:
-    assert __version__ == "0.7.0"
+    assert __version__ == "0.8.0.dev"
 
 
 def _run_system_exit(path: str) -> None:
